@@ -4,7 +4,7 @@
 'use strict';
 
 var expect    = require('chai').expect,
-    Gamblers    = require('../../app/models/gambler'),
+    Gambler    = require('../../app/models/gambler'),
     dbConnect = require('../../app/lib/mongodb'),
     cp        = require('child_process'),
     db        = 'gambling';
@@ -21,4 +21,21 @@ describe('Gambler', function(){
       done();
     });
   });
+
+  describe('constructor', function(){
+    it('should create a new Gambler object', function(){
+      var g = new Gambler();
+      expect(g).to.be.instanceof(Gambler);
+    });
+  });
+
+  describe('.all', function(){
+    it('should get all gamblers', function(done){
+      Gambler.all(function(err, gamblers){
+        expect(gamblers).to.have.length(3);
+        done();
+      });
+    });
+  });
+});
 

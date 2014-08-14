@@ -1,12 +1,70 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
-
-*{
-  font-family: 'Open Sans', sans-serif;
-  font-size: 13px;
-}
-
 body{
-  background-image: url(/img/node.png);
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #eee;
   background-size: cover;
+  width: 80%;
+  margin: 30px auto;
+}
+h1 {
+  font-size: 3em;
+}
+h2 {
+  font-size: 2em;
+}
+.wrapper {
+  width: 100%;
+  margin: 30px auto;
+}
+/*nav bar */
+nav {
+  display: inline-block;
+  text-decoration: none;
 }
 
+/* meet the gamblers page */
+.gambler {
+  clear: both;
+  margin-
+}
+.gambler .people {
+  width: 40%;
+  float: left;
+  padding: 20px;
+  border: 1px dotted black;
+}
+.people h5 {
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+}
+/*pictures of people*/
+.people > div {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+.details {
+  width: 40%;
+  float: left;
+  padding: 30px;
+}
+.details h3 {
+  font-size: 30px;
+}
+/* pictures of assets */
+.assets {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  float: left;
+  position: relative;
+  margin: 0;
+  clear: both;
+}
+.asset-info {
+  padding: 20px;
+  position: absolute;
+
+}
