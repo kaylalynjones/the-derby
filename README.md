@@ -1,7 +1,7 @@
-## name of project
+## The Derby
 ### Code Badges
-build status icon
-coverage status icon
+[![Build Status](https://travis-ci.org/kaylalynjones/the-derby.svg)](https://travis-ci.org/kaylalynjones/the-derby)
+[![Coverage Status](https://coveralls.io/repos/kaylalynjones/the-derby/badge.png)](https://coveralls.io/r/kaylalynjones/the-derby)
 
 ### About
 write a description about your project
@@ -35,7 +35,6 @@ $ npm test
 ```
 
 ### Contributors
-- [Chyld Medford](https://github.com/chyld)
 
 ### License
 [MIT](LICENSE)
