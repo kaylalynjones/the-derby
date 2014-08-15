@@ -1,0 +1,106 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+body{
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #eee;
+  background-size: cover;
+  width: 80%;
+  margin: 30px auto;
+}
+h1 {
+  font-size: 3em;
+}
+h2 {
+  font-size: 2em;
+  margin-top: 40px;
+  clear: both;
+}
+.wrapper {
+  width: 100%;
+  margin: 30px auto;
+}
+/*nav bar */
+nav {
+  float: right;
+}
+nav ul li{
+  display: inline-block;
+  margin: 10px 30px;
+  font-size: 20px;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+}
+a:visited {
+  color: black;
+}
+/* meet the gamblers page */
+.gambler {
+  clear: both;
+  margin-
+}
+.gambler .people {
+  width: 40%;
+  float: left;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: rgba(0,0,0,0.4);
+}
+.people h5 {
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+  color: white;
+}
+.people {
+  margin-bottom: 30px;
+}
+/* pictures of people */
+.people > div {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+.details {
+  width: 40%;
+  float: left;
+  padding: 30px;
+  margin-left: 50px;
+}
+.details h3 {
+  font-size: 30px;
+  line-height: 40px;
+  letter-spacing: 1px;
+}
+/* pictures of assets */
+.assets {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  float: left;
+  margin: 10px 0;
+  clear: both;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+.asset-info {
+  padding: 20px;
+  float: right;
+  line-height: 25px;
+  width: 130px;
+  height: 60px;
+  position: relative;
+  top: 25px;
+  left: 185px;
+  font-size: 20px;
+  background-color: white;
+}
+.pawnIt {
+  background-color: red;
+  padding: 10px;
+}

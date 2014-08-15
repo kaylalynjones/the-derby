@@ -1,0 +1,39 @@
+{
+  "_id":{"$oid":"000000000000000000000001"},
+  "name":"Bob Jones",
+  "spouse": {"name":"Sara Jones","photo":"http://static.ddmcdn.com/gif/alaskan-women-tina-300x300.jpg"},
+  "photo":"http://cf.foreveryoungadult.com/_uploads/images/ambiguousbadguy.jpg",
+  "cash": 5000,
+  "assets":[
+    {"name":"ring", "photo":"http://www.weddingringsetss.com/wp-content/uploads/2013/02/engagement-ring-finger-for-women_2.jpg", "value":5000}, 
+    {"name":"boat", "photo":"http://www.tlegalfirm.com/wp-content/uploads/2012/03/boat-homepage1.jpg", "value":14000}, 
+    {"name":"car", "photo":"http://news.carrentals.co.uk/wp-content/uploads/2013/10/Tesla-Model-S.jpg", "value":60000}
+  ],
+  "results":{"wins":5, "losses":3}
+}
+{
+  "_id":{"$oid":"000000000000000000000002"},
+  "name":"Chuck Handler",
+  "spouse": {"name":"Victoria Handler","photo":"http://static.ddmcdn.com/gif/alaskan-women-lacy-300x300.jpg"},
+  "photo":"http://redemptionpictures.com/wp-content/uploads/2014/06/micahjmurray-square.jpg",
+  "cash": 10000,
+  "assets":[
+    {"name":"beach house", "photo":"http://www.gulfshores.com/!userfiles/content_images/stay/agc_2013_int_content-img_beach-houses.jpg", "value":70000},
+    {"name":"ring", "photo":"http://www.fashionxtream.com/wp-content/uploads/2013/06/Daimond-Rings-17.jpg", "value":2000}, 
+    {"name":"car", "photo":"http://barlingfinance.com.au/wp-content/uploads/2013/07/car_barina_reversed.jpg", "value":3000}
+  ],
+  "results":{"wins":7, "losses":5}
+}
+{
+  "_id":{"$oid":"000000000000000000000003"},
+  "name":"Gary Rogers",
+  "spouse": {"name":"Lily Rogers","photo":"http://bestupnow.com/wp-content/uploads/2013/06/Fashion-For-Overweight-Women-Over-50.png"},
+  "photo":"http://xfinity.comcast.net/blogs/tv/files/2014/05/david-fynn-300.jpg",
+  "cash": 8000,
+  "assets":[
+    {"name":"ring", "photo":"http://www.forevermetals.com/flat-tungsten-carbide-ring/europa-tungsten-rings/images/reg_europa_10mm_mens_rings.jpg", "value":5000}, 
+    {"name":"scooter", "photo":"http://www.scooterdiva.com/guide/sienna.jpg", "value":13000}, 
+    {"name":"motorcycle", "photo":"http://breathalyzerinterlocks.com/wp-content/uploads/2010/04/motorcycle.jpg", "value":25000}],
+  "results":{"wins":3, "losses":5}
+}
+
