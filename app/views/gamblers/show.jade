@@ -5,21 +5,20 @@ block content
   div.gamblerDetail
     span: a(href='/gamblers/#{gambler._id.toString()}/assets/new') Add an Asset
     h2(data-gambler-id=gambler._id.toString())= gambler.name
-    .photo(style='background-image:#{gambler.photo};')
+      div(style='background-image: url(#{gambler.photo});')
     h2= gambler.spouse.name
-    .photo(style='background-image:#{gambler.photo};')
-    .photo(style='background-image:#{gambler.spouse.photo};')
-    .stats
-      ul
-        li Cash: #{gambler.cash}
-        li Wins: #{gambler.results.wins}
-        li Losses: #{gambler.results.losses}
-      each asset in gambler.assets
-        .asset(style='background-image:url(#{asset.photo});')
-          .info
-            ul
-              li.asset-name= asset.name
-              li $#{asset.value.toFixed(2)}
+      div(style='background-image: url(#{gambler.spouse.photo});')
+      .stats
+        ul
+          li Cash: #{gambler.cash}
+          li Wins: #{gambler.results.wins}
+          li Losses: #{gambler.results.losses}
+        each asset in gambler.assets
+          .asset(style='background-image:url(#{asset.photo});')
+            .info
+              ul
+                li.asset-name= asset.name
+                li $#{asset.value.toFixed(2)}
 
 block scripts
   script(src='/js/user/gambler.js')

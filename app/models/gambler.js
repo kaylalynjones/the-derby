@@ -5,7 +5,7 @@ var _ = require('lodash');
 
 function Gambler(obj){
   this.name   = obj.name;
-  this.spouse = {};
+  this.spouse = obj.spouse;
   this.assets = [];
   this.results = {wins:0, losses:0};
   this.photo = obj.photo;
@@ -19,7 +19,7 @@ Object.defineProperty(Gambler, 'collection', {
 Gambler.all = function(cb){
   Gambler.collection.find().toArray(function(err, gamblers) {
     gamblers = gamblers.map(function(gambler){
-      gambler = changePrototype(gambler);
+      return changePrototype(gambler);
     });
     cb(gamblers);
   });
@@ -35,30 +35,24 @@ Gambler.findById = function(id, cb){
 
 Gambler.prototype.removeAsset = function(name, cb) {
  if(!this.assets.length){return;}
-   var index = _.findIndex(this.assets, function(asset){return asset.name === name;}),
-       sold  = this.assets.splice(index, 1)[0];
-       this.cash += sold.value;
-  
-  //var asset = _.find(this.assets, {name: name});
-  //if (asset) {
-    //this.cash += asset.value;
-  //}
+   var index = _.findIndex(this.assets, function(asset){
+     return asset.name === name;
+   });
+   var sold  = this.assets.splice(index, 1)[0];
+   this.cash += sold.value;
+   var isDivorced = this.assets.length < 1;
 
-  //this.assets = _.remove(this.assets, function(asset){
-    //return name === asset.name;
-  //});
-  //var isDivorced = this.assets.length < 1;
-
-  //this.save(isDivorced, cb);
+   this.save(function(){
+    cb(isDivorced);
+   });
 };
 
 Gambler.prototype.addAsset = function(obj, cb){
   obj.name = obj.name;
   obj.photo = obj.photo;
   obj.value = parseInt(obj.value);
-
   this.assets.push(obj);
-  cb();
+  this.save(cb);
 };
 
 Gambler.prototype.save = function(cb){

@@ -2,7 +2,8 @@
 var Gambler = require('../models/gambler');
 
 exports.index = function(req, res){
-  Gambler.all(function(err, gamblers){
+  Gambler.all(function(gamblers){
+    console.log(gamblers);
     res.render('gamblers/index', {gamblers:gamblers});
   });
 };
@@ -25,18 +26,21 @@ exports.show = function(req, res){
 };
 
 exports.initAsset = function(req,res){
-  res.render('gambler/asset_init', {id:req.params.id});
+  res.render('gamblers/asset_init', {id:req.params.id});
 };
 
 exports.addAsset = function(req,res){
-  
+  Gambler.findById(req.params.id, function(gambler){
+    gambler.addAsset(req.body, function(){
       res.redirect('/gamblers/'+req.params.id);
+    });
+  });
 };
 
 exports.removeAsset = function(req, res){
   Gambler.findById(req.params.id, function(gambler){
     gambler.removeAsset(req.params.name, function(){
-      res.send();
+      res.send({id:req.params.id, name:req.params.name, isDivorced:isDivorced, cash:cash});
     });
   });
 };

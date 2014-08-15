@@ -95,9 +95,10 @@ a:visited {
   width: 130px;
   height: 60px;
   position: relative;
-  top: 85px;
-  right: 85px;
+  top: 25px;
+  left: 185px;
   font-size: 20px;
+  background-color: white;
 }
 .pawnIt {
   background-color: red;

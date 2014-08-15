@@ -12,7 +12,7 @@ block content
             div(style='background-image: url(#{gambler.spouse.photo});')
           .details
             h3 Wins:  #{gambler.results.wins}
-              span Losses:  #{gambler.results.losses}
+            h3 Losses:  #{gambler.results.losses}
             h3 Cash:   $#{gambler.cash.toFixed(2)}
             h3 Assets:
             each asset in gambler.assets
