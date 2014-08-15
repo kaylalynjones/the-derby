@@ -103,6 +103,7 @@ describe('Gambler', function(){
       };
       var gambler = new Gambler(f);
       gambler.save(function(){
+        console.log(gambler);
         expect(gambler._id).to.be.instanceof(Mongo.ObjectID);
         done();
       });
@@ -111,13 +112,13 @@ describe('Gambler', function(){
 
   describe('#addAsset', function(){
     it('should add an asset to a gambler', function(done){
-      var id = '000000000000000000000002',
-          obj = {name:'television', photo:'television.png', value:'600'};
+      var id = '53ed57cef991a32617e5960e',
+          obj = {name:'Television', photo:'television.png', value:'600'};
       Gambler.findById(id, function(gambler){
-        var assetCount = gambler.assets.length;
         gambler.addAsset(obj, function(){
           Gambler.findById(id, function(newGambler){
-            expect(assetCount).to.be.below(newGambler.assets.length);
+            expect(gambler.asset.length).to.be.below(newGambler.asset.length);
+            expect(gambler.asset.value).to.equal(600);
             done();
           });
         });
@@ -127,12 +128,11 @@ describe('Gambler', function(){
 
   describe('#removeAsset', function(){
     it('should remove an asset', function(done){
-      var id = '000000000000000000000002';
+      var id = '53ed57cef991a32617e5960e';
       Gambler.findById(id, function(gambler){
-        var assetCount = gambler.assets.length;
-        gambler.removeAsset('ring', function(){
+        gambler.removeAsset('Jetski', function(){
           Gambler.findById(id, function(newGambler){
-            expect(newGambler.assets.length).to.be.below(assetCount);
+            expect(newGambler.assets.length).to.be.below(gambler.assets.length);
             done();
           });
         });
