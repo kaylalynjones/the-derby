@@ -1,0 +1,17 @@
+extends ../shared/template
+block content
+
+  h2 Create a new Gambler
+  form(method='post' action='/gamblers')
+    input(name='name', type='text', placeholder='Venice Murray')
+    input(name='photo', type='text', placeholder='Image URL')
+    input(name='cash', type='number')
+    br
+    input(name='spouse[name]', type='text', placeholder='Glenn Murray')
+    input(name='spouse[photo]', type='text', placeholder='Image URL')
+    br
+    button Add Gambler
+
+block scripts
+  script(src='/js/user/gambler.js')
+
