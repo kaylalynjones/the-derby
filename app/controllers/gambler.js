@@ -39,8 +39,9 @@ exports.addAsset = function(req,res){
 
 exports.removeAsset = function(req, res){
   Gambler.findById(req.params.id, function(gambler){
-    gambler.removeAsset(req.params.name, function(){
-      res.send({id:req.params.id, name:req.params.name, isDivorced:isDivorced, cash:cash});
+    gambler.removeAsset(req.params.name, function(isDivorced){
+      // res.send({id:req.params.id, name:req.params.name, isDivorced:isDivorced, cash:gambler.cash});
+      res.send({gambler: gambler});
     });
   });
 };
