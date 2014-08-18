@@ -8,18 +8,24 @@ block content
           .people
             h5= gambler.name
             div(style='background-image: url(#{gambler.photo});')
-            h5= gambler.spouse.name
-            div(style='background-image: url(#{gambler.spouse.photo});')
+            -if(gambler.assets.length > 0){
+              .spouse.people
+                h5= gambler.spouse.name
+                div(style='background-image: url(#{gambler.spouse.photo});')
+            -} else {
+              h3 DIVORCED!
+            -}
           .details
             h3 Wins:  #{gambler.results.wins}
             h3 Losses:  #{gambler.results.losses}
-            h3 Cash:   $#{gambler.cash.toFixed(2)}
+            h3.cash Cash:   $#{gambler.cash.toFixed(2)}
             h3 Assets:
             each asset in gambler.assets
-              div(style='background-image: url(#{asset.photo});').assets
+              div(style='background-image: url(#{asset.photo});').asset
                 .asset-info
                   h6.asset-name= asset.name
                   h6 $#{asset.value.toFixed(2)}
+                  button.sell-asset sell
 
 block scripts
   script(src='/js/user/gambler.js')

@@ -78,7 +78,7 @@ a:visited {
   letter-spacing: 1px;
 }
 /* pictures of assets */
-.assets {
+.asset {
   width: 150px;
   height: 150px;
   background-size: cover;

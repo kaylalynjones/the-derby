@@ -2,22 +2,31 @@
   'use strict';
 
   $(document).ready(function(){
-    $('.assets').click(pawnIt);
+    $('.sell-asset').click(pawnIt);
   });
 
   function pawnIt(){
-    var id        = $(this).closest('.gambler').attr('data-gambler-id'),
-        assetName = $(this).find('.asset-name').text(),
-        type      = 'delete';
-    $.ajax({url:'/gamblers/'+id+'/assets/'+assetName, type:type, dataType:'json', success:function(data){
-      debugger;
-      $('.assets').fadeOut();
-  }});
+    var $asset = $(this).parents('.asset');
+    var $gambler = $asset.closest('.gambler');
+    var id        = $gambler.attr('data-gambler-id'),
+        assetName = $asset.find('.asset-name').text(),
+        type      = 'delete',
+        url       = '/gamblers/'+id+'/assets/'+assetName;
+
+    $.ajax({
+      url:url,
+      type:type,
+      dataType:'json',
+      success:function(data){
+
+        $asset.fadeOut();
+        $gambler.find('.cash').text('Cash: $' + (data.gambler.cash).toFixed(2));
+        if (data.isDivorced){
+          $gambler.find('.spouse').fadeOut();
+        }
+      }
+    });
 
     console.log(id, assetName);
   }
 })();
-<<<<<<< HEAD
-=======
-
->>>>>>> 577f3c226e3f9dc648c28be9d9c5fa48d46053fb

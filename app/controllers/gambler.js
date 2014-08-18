@@ -21,7 +21,7 @@ exports.create = function(req, res){
 
 exports.show = function(req, res){
   Gambler.findById(req.params.id, function(gambler){
-    res.render('gamblers/show', {gambler:gambler});
+    res.render('gamblers/show', {gambler:gambler, isDivorced:gambler.assets.length < 1});
   });
 };
 
@@ -39,9 +39,9 @@ exports.addAsset = function(req,res){
 
 exports.removeAsset = function(req, res){
   Gambler.findById(req.params.id, function(gambler){
-    gambler.removeAsset(req.params.name, function(isDivorced){
-      // res.send({id:req.params.id, name:req.params.name, isDivorced:isDivorced, cash:gambler.cash});
-      res.send({gambler: gambler});
+    gambler.removeAsset(req.params.name);
+    gambler.save(function(){
+      res.send({gambler:gambler, isDivorced:gambler.assets.length < 1});
     });
   });
 };

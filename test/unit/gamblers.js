@@ -28,21 +28,21 @@ describe('Gambler', function(){
   describe('constructor', function(){
     it('should create a new Gambler object', function(){
       f = {
-        name: 'Jill Bean', 
+        name: 'Jill Bean',
         spouse: {
-          name:'Jim Bean', 
+          name:'Jim Bean',
           photo:'picture.png'
-        }, 
-        photo:'anotherpicture.png', 
-        cash:40000, 
+        },
+        photo:'anotherpicture.png',
+        cash:40000,
         assets:[{
-            name:'dog', 
-            photo:'dog.png', 
+            name:'dog',
+            photo:'dog.png',
             value:'500'
           },
           {
-            name:'Jetski', 
-            photo:'jetski.png', 
+            name:'Jetski',
+            photo:'jetski.png',
             value:1300
           }
         ],
