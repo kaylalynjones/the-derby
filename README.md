@@ -4,29 +4,27 @@
 [![Coverage Status](https://coveralls.io/repos/kaylalynjones/the-derby/badge.png)](https://coveralls.io/r/kaylalynjones/the-derby)
 
 ### About
-write a description about your project
+This is an app where gamblers bet on Horse Races.
 
 ### Models
 ```
-Model 1
-prop-a
-prop-b
-.classMethod-c
-#instanceMethod-d
+Gambler
+constructor
+.all
+.findById
+#save
+#addAsset
+#removeAsset
 ```
 
 ```
-Model 2
-prop-e
-prop-f
-.classMethod-g
-#instanceMethod-h
+Horse
 ```
 
 ### Features
-- feature 1
-- feature 2
-- feature 3
+- catalogs the Gamblers
+- catalogs the Gamblers Assets
+- catalogs the Gamblers home-life
 
 ### Running Tests
 ```bash
