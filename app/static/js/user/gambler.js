@@ -6,9 +6,9 @@
   });
 
   function pawnIt(){
-    var $gambler  = $(this).parents('.asset-row').siblings('.gambler'),
+    var $button  = $(this),
         asset     = $(this).parent('.asset-info').find('.asset-name').text(),
-        id        = $gambler.attr('data-gambler-id'),
+        id        = $button.attr('data-gambler-id'),
         type      = 'delete',
         url       = '/gamblers/'+id+'/assets/'+asset;
 

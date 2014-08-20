@@ -29,7 +29,7 @@ block content
     .row.asset-row
       each asset in gambler.assets
         .col-xs-4.asset-info
-          button.btn.sell-asset.btn-default Sell Asset
+          button.btn.sell-asset.btn-default(data-gambler-id=gambler._id.toString()) Sell Asset
           ul
             li.asset-name.text-right= asset.name
             li.asset-value.text-right $#{asset.value.toFixed(2)}

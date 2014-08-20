@@ -34,8 +34,12 @@ Gambler.findById = function(id, cb){
 };
 
 Gambler.prototype.removeAsset = function(name) {
+ console.log('Gambler.prototype.removeAsset');
+ console.log(name);
+ console.log(this.assets);
  if(!this.assets.length){return;}
    var sold = _.remove(this.assets, function(asset){
+     console.log(asset);
     return asset.name === name;
    });
    this.cash += sold[0].value;
