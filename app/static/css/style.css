@@ -1,106 +1,77 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 body{
-  font-size: 1em;
-  font-family: 'Open Sans', sans-serif;
+
+}
+/*nav*/
+.navigation {
+  background-color: rgba(245, 239, 239, 0.85);
+}
+.navigation > .navbar {
+  margin: 0;
+  font-size: 18px;
+}
+nav a > .navbar {
+  font-size: 30px !important;
+  margin: 0;
+}
+.icon-bar {
   background-color: #eee;
-  background-size: cover;
-  width: 80%;
-  margin: 30px auto;
 }
-h1 {
-  font-size: 3em;
-}
-h2 {
-  font-size: 2em;
-  margin-top: 40px;
-  clear: both;
-}
-.wrapper {
-  width: 100%;
-  margin: 30px auto;
-}
-/*nav bar */
-nav {
-  float: right;
-}
-nav ul li{
-  display: inline-block;
-  margin: 10px 30px;
-  font-size: 20px;
-}
-a {
-  text-decoration: none;
-}
-a:hover {
-}
-a:visited {
-  color: black;
-}
-/* meet the gamblers page */
-.gambler {
-  clear: both;
-  margin-
-}
-.gambler .people {
-  width: 40%;
-  float: left;
-  padding: 20px;
-  border: 1px solid black;
-  border-radius: 20px;
-  background-color: rgba(0,0,0,0.4);
-}
-.people h5 {
-  font-size: 20px;
-  text-align: center;
-  padding: 10px;
-  color: white;
-}
-.people {
-  margin-bottom: 30px;
-}
-/* pictures of people */
-.people > div {
+
+/*index page*/
+.photo {
   width: 300px;
   height: 300px;
   margin: 0 auto;
-  border-radius: 20px;
-  border: 1px solid black;
 }
-.details {
-  width: 40%;
-  float: left;
-  padding: 30px;
-  margin-left: 50px;
+.asset-title {
+  background-color: #eee;
+  color: #2b3e50;
+  padding: 10px;
+  margin-bottom: 0;
 }
-.details h3 {
-  font-size: 30px;
-  line-height: 40px;
-  letter-spacing: 1px;
+.asset-row {
+  background-color: rgba(245, 239, 239, 0.85);
 }
-/* pictures of assets */
-.asset {
+.asset-photo {
   width: 150px;
   height: 150px;
   background-size: cover;
-  float: left;
-  margin: 10px 0;
-  clear: both;
-  border-radius: 20px;
-  border: 1px solid black;
+  margin: 0 auto;
+}
+.asset-name, .asset-value {
+  font-size: 20px;
+  margin-right: 20px;
 }
 .asset-info {
-  padding: 20px;
-  float: right;
-  line-height: 25px;
-  width: 130px;
-  height: 60px;
-  position: relative;
-  top: 25px;
-  left: 185px;
-  font-size: 20px;
-  background-color: white;
+  height: 400px;
+  border: 2px outset gainsboro;
+  color: #2b3e50;
 }
-.pawnIt {
-  background-color: red;
-  padding: 10px;
+.stats {
+  font-size: 30px;
+  margin: 50px;
+}
+button.sell-asset {
+  margin-top: 20px;
+}
+ul li {
+list-style: none;
+}
+.gamblerDetail h2 {
+  margin-left: 50px;
+}
+.divorced h4{
+  margin-top: 60px;
+  font-size: 40px;
+}
+.submit-button {
+  margin: 10px;
+  padding: 5px;
+
+}
+.form label, .asset-form label {
+  margin: 10px;
+}
+.asset-form {
+  text-align: center;
 }

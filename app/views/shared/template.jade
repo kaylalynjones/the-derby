@@ -1,18 +1,20 @@
 doctype html
-html
+html(lang='en')
   head
     meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE-edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
     title Gambling
-    link(rel='stylesheet', href='/css/reset.css')
+    link(href='/bootstrap/themes/bootstrap.min.css', rel='stylesheet')
     link(rel='stylesheet', href='/css/style.css')
   body
-    h1 The Derby
-    nav
-      ul
-        li: a(href='/') Home
-        li: a(href='/gamblers') Gamblers
-
-    block content
+    .container-fluid
+      .row
+        .col-xs-12.navigation
+          include nav
+      .row
+        .col-xs-12
+          block content
 
     script(src='/js/vendor/jquery-2.1.1.min.js')
     script(src='/js/vendor/lodash.min.js')

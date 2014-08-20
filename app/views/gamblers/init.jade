@@ -1,17 +1,25 @@
 extends ../shared/template
 block content
-
-  h2 Create a new Gambler
-  form(method='post' action='/gamblers')
-    input(name='name', type='text', placeholder='Venice Murray')
-    input(name='photo', type='text', placeholder='Image URL')
-    input(name='cash', type='number')
-    br
-    input(name='spouse[name]', type='text', placeholder='Glenn Murray')
-    input(name='spouse[photo]', type='text', placeholder='Image URL')
-    br
-    button Add Gambler
-
+  .row
+    .col-xs-2
+    .col-xs-8.well
+      h2 Create a new Gambler
+      form.asset-form(method='post', action='/gamblers', role='form')
+        .form-group
+          label(for='name') Name
+            input.form-control(name='name', type='text', placeholder='Venice Murray')
+          label(for='photo') Photo
+            input(name='photo', type='text', placeholder='Image URL')
+          label(for='cash') Cash
+            input(name='cash', type='number', placeholder=2000)
+          br
+          label(for='spouse') Spouse
+            input(name='spouse[name]', type='text', placeholder='Glenn Murray')
+          label(for='spouse[photo]') Spouse Photo
+            input(name='spouse[photo]', type='text', placeholder='Image URL')
+          br
+          button.btn-default.submit-button Add Gambler
+      .col-xs-2
 block scripts
   script(src='/js/user/gambler.js')
 

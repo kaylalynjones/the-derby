@@ -1,24 +1,32 @@
 extends ../shared/template
 block content
 
-  h2 Detail View
-  div.gamblerDetail
-    span: a(href='/gamblers/#{gambler._id.toString()}/assets/new') Add an Asset
-    h2(data-gambler-id=gambler._id.toString())= gambler.name
-      div(style='background-image: url(#{gambler.photo});')
-    h2= gambler.spouse.name
-      div(style='background-image: url(#{gambler.spouse.photo});')
+  .row.gamblerDetail
+    .col-xs-12
+  .row
+    .col-xs-4
+      h2.text-center(data-gambler-id=gambler._id.toString())= gambler.name
+        div.photo.img-rounded(style='background-image: url(#{gambler.photo});')
+    .col-xs-4
+      h2.text-center= gambler.spouse.name
+        div.photo.img-rounded(style='background-image: url(#{gambler.spouse.photo});')
+    .col-xs-4
       .stats
         ul
           li Cash: #{gambler.cash}
           li Wins: #{gambler.results.wins}
           li Losses: #{gambler.results.losses}
-        each asset in gambler.assets
-          .asset(style='background-image:url(#{asset.photo});')
-            .info
-              ul
-                li.asset-name= asset.name
-                li $#{asset.value.toFixed(2)}
+          span: a(href='/gamblers/#{gambler._id.toString()}/assets/new') Add an Asset
+  .row
+    h2.text-center.asset-title Assets
+  .row.asset-row
+    each asset in gambler.assets
+      .col-xs-4.asset-info
+        button.btn.sell-asset.btn-default Sell Asset
+        ul
+          li.asset-name.text-right= asset.name
+          li.asset-value.text-right $#{asset.value.toFixed(2)}
+        .asset.asset-photo.img-circle(style='background-image:url(#{asset.photo});')
 
 block scripts
   script(src='/js/user/gambler.js')

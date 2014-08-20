@@ -1,12 +1,23 @@
 extends ../shared/template
 block content
 
-  h2 Add Assets
-    form(method='post', action='/gamblers/#{id}/assets/new')
-    input(name='name', type='text', placeholder='stereo')
-    input(name='photo', type='text', placehoder='Photo URL')
-    input(name='value', type='number', placeholder=1000)
-    button Add Asset
+  .row
+    .col-xs-2
+    .col-xs-8.well
+
+      h2 Add Assets
+        form.form(method='post', action='/gamblers/#{id}/assets/new', role='form')
+          label.control-label(for='name') Name
+            input.form-control(name='name', type='text', placeholder='stereo')
+          br
+          label.control-label(for='photo') Photo
+            input.form-control(name='photo', type='text', placehoder='Photo URL')
+          br
+          label.control-label(for='value') Value
+            input.form-control(name='value', type='number', placeholder=1000)
+          br
+          button.btn-default.submit-button Submit
+    .col-xs-2
 
 block scripts
   script(src='/js/user/gambler.js')
