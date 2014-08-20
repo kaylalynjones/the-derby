@@ -6,9 +6,9 @@
   });
 
   function pawnIt(){
-    var $button  = $(this),
+    var $gambler  = $(this).parents('.gambler-container'),
         asset     = $(this).parent('.asset-info').find('.asset-name').text(),
-        id        = $button.attr('data-gambler-id'),
+        id        = $gambler.attr('data-gambler-id'),
         type      = 'delete',
         url       = '/gamblers/'+id+'/assets/'+asset;
 
@@ -18,7 +18,7 @@
       dataType:'json',
       success:function(data){
 
-        var $asset = $gambler.siblings('.asset-row').find('.asset-name:contains('+data.name+')').closest('.asset');
+        var $asset = $gambler.find('.asset-row').find('.asset-name:contains('+asset+')').parents('.asset-info');
         $asset.fadeOut();
         $gambler.find('.cash').text('Cash: $' + (data.gambler.cash).toFixed(2));
         if (data.isDivorced){
